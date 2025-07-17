@@ -1,0 +1,49 @@
+{ 
+  "auto": [ 
+    { 
+      "id": "1", 
+      "targa": "AA123BB", 
+      "modello": "Fiat Panda", 
+      "colore": "Bianco", 
+      "proprietario": "Mario Rossi" 
+    }, 
+    { 
+      "id": "2", 
+      "targa": "ZZ456CC", 
+      "modello": "Tesla Model 3", 
+      "colore": "Nero", 
+
+      "proprietario": "Laura Bianchi" 
+    } 
+  ], 
+  "parcheggi": [ 
+    { 
+      "id": "1", 
+      "nome": "Parcheggio Centrale", 
+      "posizione": "Via Roma 12", 
+      "postiTotali": 30 
+    }, 
+    { 
+      "id": "2", 
+      "nome": "Parcheggio Nord", 
+      "posizione": "Via Milano 50", 
+      "postiTotali": 50 
+    } 
+  ], 
+  "prenotazioni": [ 
+    { 
+      "id": "1", 
+      "idAuto": "1", 
+      "idParcheggio": "2", 
+      "inizio": "2025-07-17T08:00:00", 
+      "fine": "2025-07-17T12:00:00" 
+    }, 
+    { 
+      "id": "2", 
+      "idAuto": "2", 
+      "idParcheggio": "1", 
+      "inizio": "2025-07-17T10:00:00", 
+      "fine": "2025-07-17T15:00:00" 
+    } 
+  ] 
+}

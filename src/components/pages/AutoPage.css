@@ -1,0 +1,10 @@
+.centered {
+    display: grid;
+    place-items: center;
+}
+
+.ciao {
+    color: black;
+    margin-top: 7rem;
+    
+}

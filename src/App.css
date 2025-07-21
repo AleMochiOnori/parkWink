@@ -2,15 +2,15 @@
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
+  height: 100%;
 }
 
 body{
   background-color: white;
   overflow-x: hidden;
+  height: 100%;
 }
-.ciao{
-  color:  black;
-}
+
 .logo {
   height: 6em;
   padding: 1.5em;

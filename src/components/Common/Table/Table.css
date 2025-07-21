@@ -1,0 +1,41 @@
+.color {
+    color: black;
+}
+
+.table-container {
+    margin: 20px;
+    display: flex;
+}
+
+.body_style {
+    color : black;
+}
+
+.style-head{
+    color : black;
+    
+}
+
+.table {
+    width: 60rem;
+    height: 10rem;
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    
+}
+
+.colorText {
+    color: black;
+}
+
+th {
+    padding : 10px;
+    background-color: #f0ecec;
+    
+}
+
+
+td {
+    border-top : 1px solid rgba(158, 156, 156, 0.551);
+    
+}

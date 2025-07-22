@@ -6,12 +6,16 @@
 .ciao {
     color: black;
     margin-top: 7rem;
-    
+   
 }
 
 
 .pen-icon { 
-
     cursor: "pointer";
     width: "20px" 
+}
+
+.SearchBar{
+    margin-bottom: 3rem;
+    margin-top: 3rem;
 }

@@ -1,0 +1,104 @@
+.wrapper-parking {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 4rem;
+  padding-left: 80px; /* per compensare la sidebar */
+  min-height: 100vh;
+  background-color: #f4f6f8;
+  box-sizing: border-box;
+}
+
+.Detail-parkingPage-Container {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 500px;
+  box-sizing: border-box;
+}
+
+
+
+.titleParking {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
+
+.parking_form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.parking_form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.parking_form input {
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s;
+}
+
+.TextForm{
+    font-size: 1.2rem;
+
+}
+
+.parking_form input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.parking_form button {
+  margin-top: 2rem;
+  padding: 12px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.parking_form button:hover {
+  background-color: #2980b9;
+}
+
+.ciao{
+    margin-bottom: 10px;
+}
+
+.success {
+  color: #2ecc71;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.error {
+  color: #e74c3c;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 15px;
+}
+
+span {
+  font-size: 0.85rem;
+  color: #e74c3c;
+  margin-top: 5px;
+}

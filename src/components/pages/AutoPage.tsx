@@ -4,13 +4,14 @@ import { useEffect, useState } from "react";
 import { fetchAutos } from "../services/autoService";
 import penIcon from "../../../public/pen.svg";
 import SearchBar from "../Common/SearchBar/SearchBar";
+import { Link } from "react-router-dom";
 
 interface Auto {
     id: number;
     targa: string;
     modello: string;
     colore: string;
-    propietario : string;
+    proprietario : string;
 }
 
 const AutoPage = () =>{
@@ -26,12 +27,12 @@ const columns = [
   { header: "Colore", accessor: "colore" as keyof Auto },
   { header: "Proprietario", accessor: "proprietario" as keyof Auto },
   { header : "Azioni", accessor: "actions" as keyof Auto,  render: (_value : number, row : Auto) => (
-    <img className="pen-icon"
+    <Link to={`/AutoDetail/${row.id}`}><img className="pen-icon"
       src={penIcon}
       alt="Modifica"
       style={{ cursor: "pointer", width: "20px" }}
-      onClick={() => console.log("Modifica auto", row.id)}
-    />
+      />
+    </Link>
   )}
   
 ];

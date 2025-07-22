@@ -1,0 +1,93 @@
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { useForm, type SubmitHandler } from "react-hook-form";
+import "./AutoDetail.css";
+
+interface Auto {
+  id: string;
+  targa: string;
+  modello: string;
+  colore: string;
+  proprietario: string;
+}
+
+function AutoDetail() {
+  const { id } = useParams<{ id: string }>();
+  const [error, setError] = useState<string | null>(null);
+  const [success, setSuccess] = useState<boolean>(false);
+
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    formState: { errors },
+  } = useForm<Auto>();
+
+  useEffect(() => {
+    fetch(`http://localhost:3001/auto/${id}`)
+      .then((res) => res.json())
+      .then((data: Auto) => {
+        setValue("targa", data.targa);
+        setValue("modello", data.modello);
+        setValue("colore", data.colore);
+        setValue("proprietario", data.proprietario);
+      })
+      .catch(() => setError("Errore nel caricamento dell'auto"));
+  }, [id, setValue]);
+
+  const onSubmit: SubmitHandler<Auto> = (data) => {
+    fetch(`http://localhost:3001/auto/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => {
+        if (!res.ok) throw new Error("Errore nella modifica");
+        setSuccess(true);
+        setTimeout(() => setSuccess(false), 3000);
+      })
+      .catch(() => setError("Errore durante il salvataggio"));
+  };
+
+  return (
+    <div className="wrapper-auto">
+      <div className="Detail-autoPage-Container">
+        <h1 className="titleAuto">Modifica Auto</h1>
+        <form onSubmit={handleSubmit(onSubmit)} className="auto_form">
+          <label>
+            <p className="TextForm">Targa</p>
+            <input className="inputStyle" {...register("targa", { required: true })} />
+            {errors.targa && <span>Campo obbligatorio</span>}
+          </label>
+
+          <label>
+            <p className="TextForm">Modello</p>
+            <input {...register("modello", { required: true })} />
+            {errors.modello && <span>Campo obbligatorio</span>}
+          </label>
+
+          <label>
+            <p className="TextForm">Colore</p>
+            <input {...register("colore", { required: true })} />
+            {errors.colore && <span>Campo obbligatorio</span>}
+          </label>
+
+          <label>
+            <p className="TextForm">Proprietario</p>
+            <input {...register("proprietario", { required: true })} />
+            {errors.proprietario && <span>Campo obbligatorio</span>}
+          </label>
+
+          <button className="buttonStyle" type="submit">Salva modifiche</button>
+
+          {success && <p className="success">Modifica salvata!</p>}
+          {error && <p className="error">{error}</p>}
+        </form>
+      </div>
+    </div>
+  );
+}
+
+export default AutoDetail;

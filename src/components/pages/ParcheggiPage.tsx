@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import penIcon from "../../../public/pen.svg";
 import SearchBar from "../Common/SearchBar/SearchBar";
 import { fetchParkings } from "../services/parcheggioService";
+import { Link } from "react-router-dom";
 
 interface Parcheggi {
     id: string;
@@ -25,15 +26,16 @@ const ParcheggiPage = () => {
     { header: "Posizione", accessor: "posizione" as keyof  Parcheggi},
     { header: "PostiTotali", accessor: "postiTotali" as keyof  Parcheggi },
     { header : "Azioni", accessor: "actions" as keyof  Parcheggi,  render: (_value : number, row :  Parcheggi) => (
-        <img className="pen-icon"
-            src={penIcon}
-            alt="Modifica"
-            style={{ cursor: "pointer", width: "20px" }}
-            onClick={() => console.log("Modifica auto", row.id)}
-        />
+    <Link to={`/ParcheggiDetail/${row.id}`}><img className="pen-icon"
+      src={penIcon}
+      alt="Modifica"
+      style={{ cursor: "pointer", width: "20px" }}
+      />
+    </Link>
     )}
   
 ];
+
 
 
 useEffect(() => {
@@ -47,13 +49,11 @@ useEffect(() => {
             });
     }, [searchTerm]);
 
-console.log(parkings);
-
 
     return (
         <>
             <div className="centered">
-                <h1 className="ciao">Lista Auto</h1>
+                <h1 className="ciao">Lista Parcheggi</h1>
                 <div className="SearchBar">
                     <SearchBar value={searchTerm}  setSearchTerm={setSearchTerm}/>
                 </div>

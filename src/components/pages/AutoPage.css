@@ -9,13 +9,25 @@
    
 }
 
+.action-icons {
+    display: grid;
+    justify-content: center;
+    display:flex;
+    gap: 15px;
+    align-items: center;
+}
 
 .pen-icon { 
-    cursor: "pointer";
-    width: "20px" 
+    cursor: pointer;
+    width: 20px;
+
 }
+
 
 .SearchBar{
     margin-bottom: 3rem;
     margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }

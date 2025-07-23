@@ -16,7 +16,7 @@ interface TableProps<T> {
 
 const TableComp = <T,>({ items, columns }: TableProps<T>) => {
   return (
-    <table className="table">
+    <table className="my-table">
       <thead>
         <tr className="styleHead">
           {columns.map((col, idx) => (

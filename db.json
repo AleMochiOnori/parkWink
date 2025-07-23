@@ -2,9 +2,9 @@
   "auto": [
     {
       "id": "1",
-      "targa": "AA123BB",
+      "targa": "1223453453",
       "modello": "Fiat Panda",
-      "colore": "Bianco",
+      "colore": "Rosso",
       "proprietario": "Mario Rossi"
     },
     {
@@ -17,16 +17,10 @@
   ],
   "parcheggi": [
     {
-      "id": "1",
       "nome": "Parcheggio Wink",
       "posizione": "Via Francesco Ferraioni",
-      "postiTotali": "2"
-    },
-    {
-      "id": "2",
-      "nome": "Parcheggio Wink",
-      "posizione": "Via flavio",
-      "postiTotali": "1"
+      "postiTotali": "2",
+      "id": 1
     }
   ],
   "prenotazioni": [

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useForm, type SubmitHandler } from "react-hook-form";
 import "./AutoDetail.css";
+import { validatePlate } from "../services/autoService";
 
 interface Auto {
   id: string;
@@ -36,19 +37,21 @@ function AutoDetail() {
   }, [id, setValue]);
 
   const onSubmit: SubmitHandler<Auto> = (data) => {
-    fetch(`http://localhost:3001/auto/${id}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((res) => {
-        if (!res.ok) throw new Error("Errore nella modifica");
-        setSuccess(true);
-        setTimeout(() => setSuccess(false), 3000);
+    if (validatePlate(data.targa)) {
+      fetch(`http://localhost:3001/auto/${id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }).then((res) => {
+        if (!res.ok) throw new Error("Errore nella modifica");  
       })
-      .catch(() => setError("Errore durante il salvataggio"));
+        .catch(() => setError("Errore durante il salvataggio"));
+    } else {
+      alert("La targa inserita non è valida. Assicurati che sia nel formato corretto.");
+      setSuccess(false);
+    }
   };
 
   return (

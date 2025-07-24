@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useForm, type SubmitHandler } from "react-hook-form";
+import { Controller, useForm, type SubmitHandler } from "react-hook-form";
 import "./AutoDetail.css";
 import { validatePlate } from "../services/autoService";
+import Select from 'react-select'
 
 interface Auto {
   id: string;
@@ -21,8 +22,25 @@ function AutoDetail() {
     register,
     handleSubmit,
     setValue,
+    control,
     formState: { errors },
   } = useForm<Auto>();
+
+
+  const options = [
+    { value: 'rosso', label: 'Rosso' },
+    { value: 'blu', label: 'Blu' },
+    { value: 'verde', label: 'Verde' },
+    { value: 'nero', label: 'Nero' },
+    { value: 'bianco', label: 'Bianco' },
+    { value: 'giallo', label: 'Giallo' },
+    { value: 'grigio', label: 'Grigio' },
+    { value: 'arancione', label: 'Arancione' },
+    { value: 'marrone', label: 'Marrone' },
+    { value: 'viola', label: 'Viola' },
+    { value: 'rosa', label: 'Rosa' },
+    { value: 'ciano', label: 'Ciano' },
+  ]
 
   useEffect(() => {
     fetch(`http://localhost:3001/auto/${id}`)
@@ -46,6 +64,7 @@ function AutoDetail() {
         body: JSON.stringify(data),
       }).then((res) => {
         if (!res.ok) throw new Error("Errore nella modifica");  
+        setSuccess(true);
       })
         .catch(() => setError("Errore durante il salvataggio"));
     } else {
@@ -73,9 +92,22 @@ function AutoDetail() {
 
           <label>
             <p className="TextForm">Colore</p>
-            <input {...register("colore", { required: true })} />
-            {errors.colore && <span>Campo obbligatorio</span>}
-          </label>
+            <Controller
+            name="colore"
+            control={control}
+            rules={{ required: true }}
+            render={({ field }) => (
+             <Select
+              {...field}
+              className="color-select"
+              options={options}
+              value={options.find(option => option.value === field.value)}
+              onChange={(selectedOption) => field.onChange(selectedOption?.value)}
+      />
+    )}
+  />
+  {errors.colore && <span>Campo obbligatorio</span>}
+</label>
 
           <label>
             <p className="TextForm">Proprietario</p>

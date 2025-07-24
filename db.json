@@ -2,17 +2,10 @@
   "auto": [
     {
       "id": "1",
-      "targa": "1223453453",
+      "targa": "AA555PR",
       "modello": "Fiat Panda",
-      "colore": "Rosso",
+      "colore": "blu",
       "proprietario": "Mario Rossi"
-    },
-    {
-      "id": "2",
-      "targa": "ZZ456CC",
-      "modello": "Tesla Model 3",
-      "colore": "Nero",
-      "proprietario": "Laura Bianchi"
     }
   ],
   "parcheggi": [
@@ -21,6 +14,12 @@
       "posizione": "Via Francesco Ferraioni",
       "postiTotali": "2",
       "id": 1
+    },
+    {
+      "nome": "Parcheggio Frascati",
+      "posizione": "Via Roma 12",
+      "postiTotali": "2",
+      "id": 2
     }
   ],
   "prenotazioni": [
@@ -32,11 +31,11 @@
       "fine": "2025-07-17T12:00:00"
     },
     {
-      "id": "2",
       "idAuto": "2",
-      "idParcheggio": "1",
-      "inizio": "2025-07-17T10:00:00",
-      "fine": "2025-07-17T15:00:00"
+      "idParcheggio": "3",
+      "inizio": "1212-12-12T12:12",
+      "fine": "2222-12-12T12:21",
+      "id": "AFRfn4k"
     }
   ]
 }

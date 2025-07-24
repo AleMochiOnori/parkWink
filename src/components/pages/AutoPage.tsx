@@ -73,10 +73,9 @@ useEffect(() => {
                 console.error('Errore:', error);
                 setError(error.message);
             });
-             console.log(autos);
+           
     }, [searchTerm]);
 
-     console.log(autos);
 
 
     return (
@@ -94,7 +93,7 @@ useEffect(() => {
                         className="modalStyle"
                         search={searchTerm}
                         setAutos={setAutos}
-                        
+
                     />
                 </div>
                 <div className="table-container">

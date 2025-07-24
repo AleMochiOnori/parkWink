@@ -1,7 +1,12 @@
 const BASE_URL = 'http://localhost:3001';
+const postPerPage = 10;
 
 export function fetchAutos(searchTerm : string) {
-    return fetch(`${BASE_URL}/auto${searchTerm ? `?id=${searchTerm}` : ''}`)
+    const params = [];
+    if (searchTerm) params.push(`id=${searchTerm}`);
+    if (postPerPage) params.push(`per_page=${postPerPage}`);
+    const queryString = params.length ? `?${params.join('&')}` : '';
+    return fetch(`${BASE_URL}/auto${queryString}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');

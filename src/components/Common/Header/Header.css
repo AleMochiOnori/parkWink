@@ -10,22 +10,19 @@
   justify-content: space-between;
   background-color: white;
   z-index: 2;
-  
-
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   padding: 2px 3px; 
 }
 
 .right-content{
     display: flex;
-    align-items: center;
     margin-right: 3rem;
     gap:1rem
 }
 
 .textStyle {
   color: black;
-
+  margin-top: 5px;
 }
 
 .svgStyle{

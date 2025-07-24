@@ -74,7 +74,7 @@ const VerticallyCenteredModal = (props : any) => {
       centered>
       <form className="form-add-auto" onSubmit={handleSubmit}>
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
+        <Modal.Title  id="contained-modal-title-vcenter">
           Aggiungi auto
         </Modal.Title>
       </Modal.Header>
@@ -102,7 +102,7 @@ const VerticallyCenteredModal = (props : any) => {
           <div className="form-group-colore">
             <label htmlFor="colore">Colore</label>
           </div>
-           <Select className='color-select' options={options} />
+           <Select className='color-select' options={options} required />
           <div className="form-group">
             <label htmlFor="proprietario">Proprietario</label>    
             <input 

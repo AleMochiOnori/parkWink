@@ -7,7 +7,7 @@ const SideBar = () => {
       <div className="top-content">
         <p></p>
       </div>
-
+      
       <div className="middle-content">
         <div className="outer_">
           <Link to="/auto">

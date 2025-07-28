@@ -9,24 +9,22 @@ const SideBar = () => {
       </div>
       
       <div className="middle-content">
-        <div className="outer_">
-          <Link to="/auto">
-            <div className="carSvg"></div>
-          </Link>
-        </div>
-
-        <div className="outer_">
-          <Link to="/parcheggi">
-            <div className="Psvg"></div>
-          </Link>
-        </div>
-        <div className="outer_">
-          <Link to="/prenotazioni">
-            <div className="NoteSvg"></div>
-          </Link>
-        </div>
+        <Link to="/auto">
+          <div className="outer_">
+              <div className="carSvg"></div>
+          </div>
+        </Link>
+        <Link to="/parcheggi">
+          <div className="outer_">
+              <div className="Psvg"></div>
+          </div>
+        </Link>
+        <Link to="/prenotazioni">
+          <div className="outer_">
+              <div className="NoteSvg"></div>
+          </div>
+        </Link>
       </div>
-
       <div className="bottom-content"></div>
     </div>
   );

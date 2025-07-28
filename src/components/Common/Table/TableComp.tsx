@@ -36,6 +36,7 @@ const TableComp = <T,>({ items, columns }: TableProps<T>) => {
               
             ))}
           </tr>
+          
         ))}
       </tbody>
     </table>

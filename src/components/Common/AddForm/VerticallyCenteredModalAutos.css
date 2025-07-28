@@ -18,3 +18,16 @@
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
+
+
+.buttonVerde{
+  width: 8rem;
+  background-color: #038203 !important; 
+  border-color: #038203  !important;
+}
+
+.buttonChiaro {
+  width: 8rem;
+  background-color: #434443 !important; 
+  border-color: #434443  !important;
+}

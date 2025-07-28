@@ -10,13 +10,49 @@
   border-radius: 10px;
 }
 
-.select-container {
+.top {
   display: flex;
-  gap: 20px;
-  margin: 0 auto;
-  margin-bottom: 2rem;
+  gap: 3rem;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
+
+.date-select {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.input-Style {
+  width: 23.9rem;
+  padding: 7px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  color: hsl(0, 0%, 50%);
+  background-color: rgb(255, 255, 255);
+}
+.date-select input {
+  text-align: center; 
+}
+
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}
+
+
+.date-container {
+  gap: 3rem;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+}
 .css-19bb58m {
   width: 20rem;
 }
@@ -26,16 +62,33 @@
 }
 
 
-.btn{
+.btn-prenota{
+  background-color: #038203;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 14rem;
+}
+
+.btn-prenota:hover {
+  background-color: #038203;
+  color: white;
+}
+
+.buttons-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+
+.btn-2{
   background-color: #3498db;
   color: white;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-}
-
-.btn:hover {
-  background-color: #2980b9;
-  color: white;
 }

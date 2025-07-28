@@ -1,60 +1,66 @@
-import "./AutoPage.css"
+import "./AutoPage.css";
 import TableComp from "../Common/Table/TableComp";
 import { useEffect, useState } from "react";
-import { deleteAuto, fetchAutos } from "../services/autoService";
+import { deletePrenotazione, fetchPrenotazioni } from "../services/prenotazioneService";
 import penIcon from "../../../public/pen.svg";
 import SearchBar from "../Common/SearchBar/SearchBar";
 import { Link } from "react-router-dom";
-import React from "react";
-import { Button } from "react-bootstrap";
-import MyVerticallyCenteredModal from "../Common/AddForm/VerticallyCenteredModalAutos";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import TrashBin from "../../assets/TrashBin.svg";
 import ReactPaginate from "react-paginate";
+import "./PrenotazioniTable.css"
 
-interface Auto {
-    id: string;
-    targa: string;
-    modello: string;
-    colore: string;
-    proprietario : string;
+interface Prenotazione {
+  id: string;
+  idAuto: string;
+  idParcheggio: number;
+  inizio: string;
+  fine: string;
 }
 
-
-const AutoPage = () => {
+const PrenotazioniPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [autos, setAutos] = useState<Auto[]>([]);
-  const [error, setError] = useState(null);
-  const [modalShow, setModalShow] = React.useState(false);
   const [currentPage, setCurrentPage] = useState(0);
-  const postPerPage = 10;
-  const pageCount = Math.ceil(autos.length / postPerPage);
+  const itemsPerPage : number = 10
+  const [prenotazioni, setPrenotazioni] = useState<Prenotazione[]>([]);
+  const [total, setTotal] = useState(0);
+// ...
+useEffect(() => {
+  fetchPrenotazioni(searchTerm, currentPage, itemsPerPage).then(res => {
+    setPrenotazioni(res.data);
+    setTotal(res.total);
+  });
+}, [currentPage, searchTerm, itemsPerPage]);
 
+const pageCount = Math.ceil(total / itemsPerPage);
+
+  const handlePageClick = (event: { selected: number }) => {
+    setCurrentPage(event.selected);
+  };
 
   function handleDelete(id: string | number) {
     const idStr = id.toString();
-    deleteAuto(idStr)
+    deletePrenotazione(idStr)
       .then(() => {
-        setAutos(prevAutos => prevAutos.filter(auto => auto.id !== id));
-        console.log('Auto eliminata con successo');
+        setPrenotazioni(prev => prev.filter(p => p.id !== id));
       })
       .catch(error => {
-        console.error("Errore durante la cancellazione dell'auto:", error);
+        console.error("Errore durante la cancellazione della prenotazione:", error);
       });
   }
 
   const columns = [
-    { header: "ID", accessor: "id" as keyof Auto },
-    { header: "Targa", accessor: "targa" as keyof Auto },
-    { header: "Modello", accessor: "modello" as keyof Auto },
-    { header: "Colore", accessor: "colore" as keyof Auto },
-    { header: "Proprietario", accessor: "proprietario" as keyof Auto },
+    { header: "ID", accessor: "id" as keyof Prenotazione },
+    { header: "ID Auto", accessor: "idAuto" as keyof Prenotazione },
+    { header: "ID Parcheggio", accessor: "idParcheggio" as keyof Prenotazione },
+    { header: "Inizio", accessor: "inizio" as keyof Prenotazione },
+    { header: "Fine", accessor: "fine" as keyof Prenotazione },
     {
       header: "Azioni",
-      accessor: "actions" as keyof Auto,
-      render: (_value: number, row: Auto) => (
+      accessor: "actions" as keyof Prenotazione,
+      render: (_value: any, row: Prenotazione) => (
         <div className="action-icons">
-          <Link to={`/AutoDetail/${row.id}`}>
+          <Link to={`/PrenotazioneDetail/${row.id}`}>
             <img
               className="pen-icon"
               src={penIcon}
@@ -65,49 +71,24 @@ const AutoPage = () => {
           <img
             className="trash"
             src={TrashBin}
-            alt="Modifica"
+            alt="Elimina"
             onClick={() => handleDelete(row.id)}
             style={{ cursor: "pointer", width: "20px", height: "20px" }}
           />
         </div>
-      ),
-    },
+      )
+    }
   ];
-
-  useEffect(() => {
-    fetchAutos(searchTerm , currentPage , postPerPage )
-      .then(data => {
-        setAutos(data.data);
-      })
-      .catch(error => {
-        console.error('Errore:', error);
-        setError(error.message);
-      });
-  }, [searchTerm]);
-
-  const handlePageClick = (event: { selected: number }) => {
-    setCurrentPage(event.selected);
-  };
 
   return (
     <>
       <div className="centered">
-        <h1 className="ciao">Lista Auto</h1>
+        <h1 className="ciao">Lista Prenotazioni</h1>
         <div className="SearchBar">
           <SearchBar value={searchTerm} setSearchTerm={setSearchTerm} />
-          <Button className="buttonGreen" variant="primary" onClick={() => setModalShow(true)}>
-            Aggiungi Auto
-          </Button>
-          <MyVerticallyCenteredModal
-            show={modalShow}
-            onHide={() => setModalShow(false)}
-            className="modalStyle"
-            search={searchTerm}
-            setAutos={setAutos}
-          />
         </div>
         <div className="table-container">
-          <TableComp items={autos} columns={columns} />
+          <TableComp items={prenotazioni} columns={columns} />
           <div className="pagination_container">
             <div></div>
             <ReactPaginate
@@ -136,4 +117,4 @@ const AutoPage = () => {
   );
 };
 
-export default AutoPage;
+export default PrenotazioniPage;

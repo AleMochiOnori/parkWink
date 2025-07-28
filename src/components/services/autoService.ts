@@ -1,20 +1,21 @@
 const BASE_URL = 'http://localhost:3001';
-const postPerPage = 10;
 
-export function fetchAutos(searchTerm : string) {
-    const params = [];
-    if (searchTerm) params.push(`id=${searchTerm}`);
-    if (postPerPage) params.push(`per_page=${postPerPage}`);
-    const queryString = params.length ? `?${params.join('&')}` : '';
-    return fetch(`${BASE_URL}/auto${queryString}`)
-        .then(response => {
+
+
+export function fetchAutos(searchTerm : string , currentPage : number , postPerPage : number) {
+    const page = currentPage + 1;
+    return fetch(`${BASE_URL}/auto${`?_page=${page}&_limit=${postPerPage}${searchTerm ? `&id=${searchTerm}` : ""}`}`)
+    
+        .then(async response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
-            return response.json();
+            const data = await response.json();
+            const total = Number(response.headers.get('x-total-count'));
+            return { data, total };
         })
+        
 }
-
 
 export const validatePlate = (targa: string) => {
     const regex = /^[A-Z]{2}[0-9]{3}[A-Z]{2}$/;

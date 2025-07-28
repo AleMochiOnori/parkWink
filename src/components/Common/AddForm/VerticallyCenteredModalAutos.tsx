@@ -4,6 +4,7 @@ import "./VerticallyCenteredModalAutos.css"
 import { addAuto, fetchAutos, validatePlate } from '../../services/autoService';
 import React, { useState, type FormEvent } from 'react';
 import Select from 'react-select'
+import { fetchAutosWithoutParams } from '../../services/prenotazioneService';
 
 
 
@@ -43,7 +44,7 @@ const VerticallyCenteredModal = (props : any) => {
     if (validatePlate(formData.targa)) {
       addAuto(formData)
         .then(() => {
-          fetchAutos(props.search).then((data) => {
+          fetchAutosWithoutParams(props.search).then((data) => {
             props.setAutos(data);
           }).catch((error) => {
             console.error('Errore durante il caricamento delle auto:', error); 
@@ -114,8 +115,8 @@ const VerticallyCenteredModal = (props : any) => {
           </div>
       </Modal.Body>
       <Modal.Footer> 
-        <Button onClick={props.onHide}>Close</Button>
-        <Button  className='buttonMargin' variant="primary" type="submit">
+        <Button className='buttonChiaro' onClick={props.onHide}>Close</Button>
+        <Button className='buttonVerde'  type="submit">
             Aggiungi
           </Button>
       </Modal.Footer>

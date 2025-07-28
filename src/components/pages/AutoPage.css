@@ -5,8 +5,6 @@
 
 .ciao {
     color: black;
-    margin-top: 7rem;
-   
 }
 
 .action-icons {
@@ -22,11 +20,18 @@
     width: 20px;
 }
 
+.buttonGreen{
+  width: 12rem;
+  background-color: #038203 !important; 
+  border-color: #038203  !important;
+}
+
 
 .SearchBar{
     margin-bottom: 3rem;
     margin-top: 3rem;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 20px;
 }

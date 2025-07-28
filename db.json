@@ -4,38 +4,412 @@
       "id": "1",
       "targa": "AA555PR",
       "modello": "Fiat Panda",
-      "colore": "blu",
+      "colore": "Blu",
       "proprietario": "Mario Rossi"
+    },
+    {
+      "id": "2",
+      "targa": "BB123XY",
+      "modello": "Volkswagen Golf",
+      "colore": "Nero",
+      "proprietario": "Luigi Bianchi"
+    },
+    {
+      "id": "3",
+      "targa": "CC999ZZ",
+      "modello": "Tesla Model 3",
+      "colore": "Rosso",
+      "proprietario": "Anna Verdi"
+    },
+    {
+      "id": "4",
+      "targa": "DD456TR",
+      "modello": "Ford Fiesta",
+      "colore": "Grigio",
+      "proprietario": "Marco Neri"
+    },
+    {
+      "id": "5",
+      "targa": "EE777LL",
+      "modello": "Renault Clio",
+      "colore": "Bianco",
+      "proprietario": "Chiara Blu"
+    },
+    {
+      "id": "6",
+      "targa": "FF222MM",
+      "modello": "Opel Corsa",
+      "colore": "Blu",
+      "proprietario": "Giulia Rosa"
+    },
+    {
+      "id": "7",
+      "targa": "GG333NN",
+      "modello": "BMW Serie 1",
+      "colore": "Nero",
+      "proprietario": "Davide Marrone"
+    },
+    {
+      "id": "8",
+      "targa": "HH444OO",
+      "modello": "Audi A3",
+      "colore": "Argento",
+      "proprietario": "Alessio Viola"
+    },
+    {
+      "id": "9",
+      "targa": "II555PP",
+      "modello": "Mercedes A-Class",
+      "colore": "Blu",
+      "proprietario": "Elena Grigia"
+    },
+    {
+      "id": "10",
+      "targa": "JJ666QQ",
+      "modello": "Toyota Yaris",
+      "colore": "Verde",
+      "proprietario": "Fabio Nero"
+    },
+    {
+      "id": "11",
+      "targa": "KK777RR",
+      "modello": "Peugeot 208",
+      "colore": "Bianco",
+      "proprietario": "Laura Celeste"
+    },
+    {
+      "id": "12",
+      "targa": "LL888SS",
+      "modello": "Citroen C3",
+      "colore": "Rosso",
+      "proprietario": "Simone Azzurro"
+    },
+    {
+      "id": "13",
+      "targa": "MM999TT",
+      "modello": "Dacia Duster",
+      "colore": "Giallo",
+      "proprietario": "Martina Fucsia"
+    },
+    {
+      "id": "14",
+      "targa": "NN000UU",
+      "modello": "Kia Rio",
+      "colore": "Grigio",
+      "proprietario": "Stefano Verde"
+    },
+    {
+      "id": "15",
+      "targa": "OO111VV",
+      "modello": "Hyundai i20",
+      "colore": "Nero",
+      "proprietario": "Ilaria Bianco"
+    },
+    {
+      "id": "16",
+      "targa": "PP222WW",
+      "modello": "Mazda 2",
+      "colore": "Blu",
+      "proprietario": "Luca Nero"
+    },
+    {
+      "id": "17",
+      "targa": "QQ333XX",
+      "modello": "Nissan Micra",
+      "colore": "Rosa",
+      "proprietario": "Sara Gialla"
+    },
+    {
+      "id": "18",
+      "targa": "RR444YY",
+      "modello": "Skoda Fabia",
+      "colore": "Verde",
+      "proprietario": "Giorgio Viola"
+    },
+    {
+      "id": "19",
+      "targa": "SS555ZZ",
+      "modello": "Suzuki Swift",
+      "colore": "Arancione",
+      "proprietario": "Paola Nera"
+    },
+    {
+      "id": "20",
+      "targa": "TT666AA",
+      "modello": "Seat Ibiza",
+      "colore": "Marrone",
+      "proprietario": "Francesco Rosso"
     }
   ],
   "parcheggi": [
     {
+      "id": 1,
       "nome": "Parcheggio Wink",
       "posizione": "Via Francesco Ferraioni",
-      "postiTotali": "2",
-      "id": 1
+      "postiTotali": 10
     },
     {
+      "id": 2,
       "nome": "Parcheggio Frascati",
       "posizione": "Via Roma 12",
-      "postiTotali": "2",
-      "id": 2
+      "postiTotali": 12
+    },
+    {
+      "id": 3,
+      "nome": "Parcheggio Centro",
+      "posizione": "Piazza Centrale 3",
+      "postiTotali": 8
+    },
+    {
+      "id": 4,
+      "nome": "Garage Blu",
+      "posizione": "Via Mare 24",
+      "postiTotali": 5
+    },
+    {
+      "id": 5,
+      "nome": "Parcheggio Nord",
+      "posizione": "Via Nord 45",
+      "postiTotali": 20
+    },
+    {
+      "id": 6,
+      "nome": "Parcheggio Sud",
+      "posizione": "Via Sud 11",
+      "postiTotali": 15
+    },
+    {
+      "id": 7,
+      "nome": "Garage Aurelia",
+      "posizione": "Via Aurelia 134",
+      "postiTotali": 10
+    },
+    {
+      "id": 8,
+      "nome": "Garage Ovest",
+      "posizione": "Via Ovest 8",
+      "postiTotali": 9
+    },
+    {
+      "id": 9,
+      "nome": "Garage Est",
+      "posizione": "Via Est 2",
+      "postiTotali": 7
+    },
+    {
+      "id": 10,
+      "nome": "Parcheggio Bosco",
+      "posizione": "Via dei Boschi 19",
+      "postiTotali": 6
+    },
+    {
+      "id": 11,
+      "nome": "Garage Verde",
+      "posizione": "Via Verde 33",
+      "postiTotali": 4
+    },
+    {
+      "id": 12,
+      "nome": "Garage Reale",
+      "posizione": "Via Reale 21",
+      "postiTotali": 12
+    },
+    {
+      "id": 13,
+      "nome": "Parcheggio Appio",
+      "posizione": "Via Appia 99",
+      "postiTotali": 11
+    },
+    {
+      "id": 14,
+      "nome": "Garage Nomentano",
+      "posizione": "Via Nomentana 5",
+      "postiTotali": 10
+    },
+    {
+      "id": 15,
+      "nome": "Parcheggio Trastevere",
+      "posizione": "Vicolo della Scala",
+      "postiTotali": 6
+    },
+    {
+      "id": 16,
+      "nome": "Parcheggio EUR",
+      "posizione": "Viale Europa 2",
+      "postiTotali": 14
+    },
+    {
+      "id": 17,
+      "nome": "Garage Prenestina",
+      "posizione": "Via Prenestina 6",
+      "postiTotali": 18
+    },
+    {
+      "id": 18,
+      "nome": "Garage Cinecittà",
+      "posizione": "Via Tuscolana 200",
+      "postiTotali": 8
+    },
+    {
+      "id": 19,
+      "nome": "Parcheggio Tiburtina",
+      "posizione": "Via Tiburtina 100",
+      "postiTotali": 13
+    },
+    {
+      "id": 20,
+      "nome": "Garage Monteverde",
+      "posizione": "Via Monteverde 1",
+      "postiTotali": 7
     }
   ],
   "prenotazioni": [
     {
       "id": "1",
       "idAuto": "1",
-      "idParcheggio": "2",
-      "inizio": "2025-07-17T08:00:00",
-      "fine": "2025-07-17T12:00:00"
+      "idParcheggio": 2,
+      "inizio": "2025-07-17T08:00",
+      "fine": "2025-07-17T12:00"
     },
     {
+      "id": "2",
       "idAuto": "2",
-      "idParcheggio": "3",
-      "inizio": "1212-12-12T12:12",
-      "fine": "2222-12-12T12:21",
-      "id": "AFRfn4k"
+      "idParcheggio": 3,
+      "inizio": "2025-07-18T10:00",
+      "fine": "2025-07-18T15:00"
+    },
+    {
+      "id": "3",
+      "idAuto": "3",
+      "idParcheggio": 4,
+      "inizio": "2025-07-19T09:30",
+      "fine": "2025-07-19T11:30"
+    },
+    {
+      "id": "4",
+      "idAuto": "4",
+      "idParcheggio": 5,
+      "inizio": "2025-07-20T07:00",
+      "fine": "2025-07-20T08:45"
+    },
+    {
+      "id": "5",
+      "idAuto": "5",
+      "idParcheggio": 6,
+      "inizio": "2025-07-21T14:00",
+      "fine": "2025-07-21T18:00"
+    },
+    {
+      "id": "6",
+      "idAuto": "6",
+      "idParcheggio": 7,
+      "inizio": "2025-07-22T08:15",
+      "fine": "2025-07-22T10:45"
+    },
+    {
+      "id": "7",
+      "idAuto": "7",
+      "idParcheggio": 8,
+      "inizio": "2025-07-23T13:00",
+      "fine": "2025-07-23T17:00"
+    },
+    {
+      "id": "8",
+      "idAuto": "8",
+      "idParcheggio": 9,
+      "inizio": "2025-07-24T10:00",
+      "fine": "2025-07-24T11:00"
+    },
+    {
+      "id": "9",
+      "idAuto": "9",
+      "idParcheggio": 10,
+      "inizio": "2025-07-25T09:00",
+      "fine": "2025-07-25T12:00"
+    },
+    {
+      "id": "10",
+      "idAuto": "10",
+      "idParcheggio": 11,
+      "inizio": "2025-07-26T12:00",
+      "fine": "2025-07-26T14:00"
+    },
+    {
+      "id": "11",
+      "idAuto": "11",
+      "idParcheggio": 12,
+      "inizio": "2025-07-27T15:00",
+      "fine": "2025-07-27T17:30"
+    },
+    {
+      "id": "12",
+      "idAuto": "12",
+      "idParcheggio": 13,
+      "inizio": "2025-07-28T07:30",
+      "fine": "2025-07-28T09:00"
+    },
+    {
+      "id": "13",
+      "idAuto": "13",
+      "idParcheggio": 14,
+      "inizio": "2025-07-29T16:00",
+      "fine": "2025-07-29T19:00"
+    },
+    {
+      "id": "14",
+      "idAuto": "14",
+      "idParcheggio": 15,
+      "inizio": "2025-07-30T10:00",
+      "fine": "2025-07-30T13:00"
+    },
+    {
+      "id": "15",
+      "idAuto": "15",
+      "idParcheggio": 16,
+      "inizio": "2025-07-31T11:00",
+      "fine": "2025-07-31T13:30"
+    },
+    {
+      "id": "16",
+      "idAuto": "16",
+      "idParcheggio": 17,
+      "inizio": "2025-08-01T08:00",
+      "fine": "2025-08-01T10:00"
+    },
+    {
+      "id": "17",
+      "idAuto": "17",
+      "idParcheggio": 18,
+      "inizio": "2025-08-02T09:00",
+      "fine": "2025-08-02T11:00"
+    },
+    {
+      "id": "18",
+      "idAuto": "18",
+      "idParcheggio": 19,
+      "inizio": "2025-08-03T12:00",
+      "fine": "2025-08-03T14:00"
+    },
+    {
+      "id": "19",
+      "idAuto": "19",
+      "idParcheggio": 20,
+      "inizio": "2025-08-04T15:00",
+      "fine": "2025-08-04T18:00"
+    },
+    {
+      "id": "20",
+      "idAuto": "20",
+      "idParcheggio": 1,
+      "inizio": "2025-08-05T10:00",
+      "fine": "2025-08-05T12:00"
+    },
+    {
+      "idAuto": "3",
+      "idParcheggio": 1,
+      "inizio": "2025-07-28T14:28",
+      "fine": "2025-07-29T14:28",
+      "id": "L7nSzeS"
     }
   ]
 }

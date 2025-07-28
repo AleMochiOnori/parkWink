@@ -90,8 +90,8 @@ const ModalPark = (props : any) => {
           </div>
       </Modal.Body>
       <Modal.Footer> 
-        <Button className='color' onClick={props.onHide}>Close</Button>
-        <Button className='primary-button' variant="primary" type="submit">
+        <Button  className='buttonChiaro' onClick={props.onHide}>Close</Button>
+        <Button className='primary-button' id='buttonGreenModal' variant="primary" type="submit">
             Aggiungi
         </Button>
       </Modal.Footer>

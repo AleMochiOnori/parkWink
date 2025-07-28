@@ -20,7 +20,6 @@
     height: 10rem;
     border: 1px solid #ccc;
     border-collapse: collapse;
-    
 }
 
 .colorText {
@@ -36,6 +35,6 @@ th {
 
 td {
     border-top : 1px solid rgba(158, 156, 156, 0.551);
-    
+    padding: 10px;
 }
 

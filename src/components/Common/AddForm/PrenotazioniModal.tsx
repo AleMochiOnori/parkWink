@@ -29,7 +29,7 @@ const PrenotazioniModal = (props: any) => {
 
     try {
       await addPrenotazione(formData);
-      const updatedPrenotazioni = await fetchPrenotazioni(props.search);
+      const updatedPrenotazioni = await fetchPrenotazioni(props.search, props.currentPage, props.itemsPerPage);
       props.setPrenotazioni(updatedPrenotazioni);
       props.onHide();
       setFormData({

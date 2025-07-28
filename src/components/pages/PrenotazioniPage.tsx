@@ -1,15 +1,14 @@
 import "./PrenotazioniPage.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Select from 'react-select'
-import { fetchAutos } from "../services/autoService";
 import { fetchParkings } from "../services/parcheggioService";
 import { useEffect, useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { addPrenotazione } from "../services/prenotazioneService";
+import { Link } from "react-router-dom";
+import { fetchAutosWithoutParams } from "../services/prenotazioneService";
 
 function PrenotazioniPage() {
   type OptionType = { value: string; label: string };
-
   const [autoOptions, setAutoOptions] = useState<OptionType[]>([]);
   const [parkingOptions, setParkingOptions] = useState<OptionType[]>([]);
   const [selectedAuto, setSelectedAuto] = useState<OptionType | null>(null);
@@ -17,10 +16,10 @@ function PrenotazioniPage() {
   const [inizio, setInizio] = useState("");
   const [fine, setFine] = useState("");
    useEffect(() => {
-    fetchAutos("").then((data) => {
-      const options = data.map((auto: { id: string, targa: string }) => ({
+    fetchAutosWithoutParams("").then((data) => {
+      const options = data.map((auto: { id: string, targa: string}) => ({
         value: auto.id,
-        label: auto.targa
+        label: auto.targa,
       }));
       setAutoOptions(options);
     });
@@ -31,16 +30,17 @@ function PrenotazioniPage() {
       }));
       setParkingOptions(options);
     });
+    setInizio("")
+    setFine("")
   }, []);
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    // Logica per gestire la prenotazione
-  
-  if (!selectedAuto || !selectedParcheggio || !inizio || !fine) {
-    alert("Compila tutti i campi!");
-    return;
+    if (!selectedAuto || !selectedParcheggio || !inizio || !fine) {
+      alert("Compila tutti i campi!");
+      return;
   }
+
 
 
   const prenotazione = {
@@ -64,26 +64,56 @@ function PrenotazioniPage() {
   return (
     <div className="centered">
       <div className="prenotazioni-container">
-        <h1 className="ciao">Lista prenotazioni</h1>
+        <h1 className="ciao">Prenota un parcheggio</h1>
         <div className="select-container">
-          <div className="auto-select">
-            <p>Seleziona la targa</p>
-            <Select className='color-select' options={autoOptions} 
-              value={selectedAuto}
-              onChange={(selected) => setSelectedAuto(selected)}
-              placeholder="Seleziona auto"/>
+          <div className="top">
+            <div className="auto-select">
+              <p>Seleziona la targa</p>
+              <Select className='color-select' options={autoOptions} 
+                value={selectedAuto}
+                onChange={(selected) => setSelectedAuto(selected)}
+                placeholder="Seleziona auto"/>
+            </div>
+            <div className="parcheggio-select">
+              <p>Seleziona un parcheggio</p>
+              <Select className='color-select' options={parkingOptions}
+                value={selectedParcheggio}
+                onChange={(selected) => setSelectedParcheggio(selected)}
+                placeholder="Seleziona parcheggio" />
+            </div>
+
           </div>
-          <div className="parcheggio-select">
-            <p>Seleziona un parcheggio</p>
-            <Select className='color-select' options={parkingOptions}
-              value={selectedParcheggio}
-              onChange={(selected) => setSelectedParcheggio(selected)}
-              placeholder="Seleziona parcheggio" />
+          <div className="date-container">
+            <div className="date-select">
+              <p>Data inizio</p>
+              <input
+                className="input-Style"
+                type="datetime-local"
+                value={inizio}
+                onChange={(e) => setInizio(e.target.value)}
+              />          
+            </div>
+            <div className="date-select">
+              <p>Data fine</p>
+              <input
+                className="input-Style"
+                type="datetime-local"
+                value={fine}
+                onChange={(e) => setFine(e.target.value)}
+              />
+            </div>
           </div>
+          <div className="buttons-container">
+            <form onSubmit={handleSubmit}>
+              <button type="submit" className="btn-prenota">Prenota</button>
+            </form>
+            <Link to="/PrenotazioniTable">
+                <button className="btn-2" >Modifica Prenotazione</button>
+            </Link>
+            
+          </div>
+
         </div>
-        <form onSubmit={handleSubmit}>
-          <button type="submit" className="btn">Prenota</button>
-        </form>
       </div>
     </div>
   );

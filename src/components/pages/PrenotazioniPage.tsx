@@ -1,11 +1,12 @@
 import "./PrenotazioniPage.css";
 import Select from 'react-select'
-import { fetchParkings } from "../services/parcheggioService";
+import { fetchParkings, fetchParkingsWithoutPaginationParams } from "../services/parcheggioService";
 import { useEffect, useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { addPrenotazione } from "../services/prenotazioneService";
 import { Link } from "react-router-dom";
 import { fetchAutosWithoutParams } from "../services/prenotazioneService";
+import { Button } from "react-bootstrap";
 
 function PrenotazioniPage() {
   type OptionType = { value: string; label: string };
@@ -23,7 +24,7 @@ function PrenotazioniPage() {
       }));
       setAutoOptions(options);
     });
-     fetchParkings("").then((data) => {
+     fetchParkingsWithoutPaginationParams("").then((data) => {
       const options = data.map((p: { id: string, nome: string }) => ({
         value: p.id,
         label: p.nome
@@ -107,11 +108,12 @@ function PrenotazioniPage() {
             <form onSubmit={handleSubmit}>
               <button type="submit" className="btn-prenota">Prenota</button>
             </form>
-            <Link to="/PrenotazioniTable">
-                <button className="btn-2" >Modifica Prenotazione</button>
-            </Link>
-            
+          <Link to={"/prenotazioniTable"}>
+            <Button className="button-bottom" variant="primary">Torna alle prenotazioni</Button>
+          </Link>
+           
           </div>
+
 
         </div>
       </div>

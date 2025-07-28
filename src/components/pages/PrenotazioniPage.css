@@ -83,12 +83,18 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
   justify-content: space-around;
 }
 
-
-.btn-2{
+.button-bottom {
   background-color: #3498db;
-  color: white;
   border: none;
+  height: 3rem;
   padding: 10px 20px;
   border-radius: 5px;
-  cursor: pointer;
+  font-weight: bold;
 }
+
+.button-bottom:hover {
+  background-color: #3498db;
+}
+
+
+

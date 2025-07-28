@@ -9,6 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import TrashBin from "../../assets/TrashBin.svg";
 import ReactPaginate from "react-paginate";
 import "./PrenotazioniTable.css"
+import { Button } from "react-bootstrap";
 
 interface Prenotazione {
   id: string;
@@ -24,13 +25,13 @@ const PrenotazioniPage = () => {
   const itemsPerPage : number = 10
   const [prenotazioni, setPrenotazioni] = useState<Prenotazione[]>([]);
   const [total, setTotal] = useState(0);
-// ...
+
 useEffect(() => {
   fetchPrenotazioni(searchTerm, currentPage, itemsPerPage).then(res => {
     setPrenotazioni(res.data);
     setTotal(res.total);
   });
-}, [currentPage, searchTerm, itemsPerPage]);
+}, [currentPage, searchTerm]);
 
 const pageCount = Math.ceil(total / itemsPerPage);
 
@@ -86,6 +87,12 @@ const pageCount = Math.ceil(total / itemsPerPage);
         <h1 className="ciao">Lista Prenotazioni</h1>
         <div className="SearchBar">
           <SearchBar value={searchTerm} setSearchTerm={setSearchTerm} />
+          <Link to={"/prenotazioni"}>
+             <Button className="buttonGreen2" variant="primary">
+            Aggiungi Prenotazione
+          </Button>
+          </Link>
+         
         </div>
         <div className="table-container">
           <TableComp items={prenotazioni} columns={columns} />

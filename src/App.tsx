@@ -22,10 +22,10 @@ function App() {
           <Route index element={<AutoPage />} />
           <Route path="auto" element={<AutoPage />} />
           <Route path="parcheggi" element={<ParcheggiPage />} />
-          <Route path="prenotazioni" element={<PrenotazioniPage />} />
+          <Route path="PrenotazioniTable" element={<PrenotazioniTable />} />
           <Route path="AutoDetail/:id" element={<AutoDetail />} />
           <Route path="ParcheggiDetail/:id" element={<ParcheggioDetail />} />
-          <Route path="PrenotazioniTable" element={<PrenotazioniTable />} />
+          <Route path="prenotazioni" element={<PrenotazioniPage />} />
           <Route path="PrenotazioneDetail/:id" element={<PrenotazioneDetail />} />
         </Route>
       </Routes>

@@ -1,4 +1,4 @@
-import "./AutoPage.css"
+import "./AutoPage.css";
 import TableComp from "../Common/Table/TableComp";
 import { useEffect, useState } from "react";
 import penIcon from "../../../public/pen.svg";
@@ -7,38 +7,47 @@ import { deleteParking, fetchParkings } from "../services/parcheggioService";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import MyVerticallyCenteredModal from "../Common/AddForm/ModalPark";
-import React from "react";
 import TrashBin from "../../assets/TrashBin.svg";
 import ReactPaginate from "react-paginate";
 
-interface Parcheggi {
-    id: string;
-    nome: string;
-    posizione : string;
-    postiTotali: number;
+interface Parcheggio {
+  id: string;
+  nome: string;
+  posizione: string;
+  postiTotali: number;
 }
-
-
 
 const ParcheggiPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [parkings, setParkings] = useState<Parcheggi[]>([]);
-  const [error, setError] = useState(null);
-  const [modalShow, setModalShow] = React.useState(false);
+  const [parkings, setParkings] = useState<Parcheggio[]>([]);
+  const [error, setError] = useState<string | null>(null);
+  const [modalShow, setModalShow] = useState(false);
   const [currentPage, setCurrentPage] = useState(0);
+  const [total, setTotal] = useState(0);
   const itemsPerPage = 10;
-  const pageCount = Math.ceil(parkings.length / itemsPerPage);
-  const offset = currentPage * itemsPerPage;
-  const currentItems = parkings.slice(offset, offset + itemsPerPage);
+
+  const pageCount = Math.ceil(total / itemsPerPage);
+
+  useEffect(() => {
+    fetchParkings(searchTerm, currentPage, itemsPerPage)
+      .then(res => {
+        setParkings(res.data);
+        setTotal(res.total);
+      })
+      .catch(error => {
+        console.error('Errore durante il fetch dei parcheggi:', error);
+        setError(error.message);
+      });
+  }, [searchTerm, currentPage]);
 
   function handleDelete(id: string) {
     deleteParking(id)
       .then(() => {
-        setParkings(prevParks => prevParks.filter(park => park.id !== id));
-        console.log('Auto eliminata con successo');
+        setParkings(prev => prev.filter(p => p.id !== id));
+        console.log('Parcheggio eliminato con successo');
       })
       .catch(error => {
-        console.error("Errore durante la cancellazione dell'auto:", error);
+        console.error("Errore durante la cancellazione del parcheggio:", error);
       });
   }
 
@@ -47,14 +56,14 @@ const ParcheggiPage = () => {
   };
 
   const columns = [
-    { header: "ID", accessor: "id" as keyof Parcheggi },
-    { header: "Nome", accessor: "nome" as keyof Parcheggi },
-    { header: "Posizione", accessor: "posizione" as keyof Parcheggi },
-    { header: "PostiTotali", accessor: "postiTotali" as keyof Parcheggi },
+    { header: "ID", accessor: "id" as keyof Parcheggio },
+    { header: "Nome", accessor: "nome" as keyof Parcheggio },
+    { header: "Posizione", accessor: "posizione" as keyof Parcheggio },
+    { header: "Posti Totali", accessor: "postiTotali" as keyof Parcheggio },
     {
       header: "Azioni",
-      accessor: "actions" as keyof Parcheggi,
-      render: (_value: number, row: Parcheggi) => (
+      accessor: "actions" as keyof Parcheggio,
+      render: (_value: number, row: Parcheggio) => (
         <div className="action-icons">
           <Link to={`/ParcheggiDetail/${row.id}`}>
             <img
@@ -76,17 +85,6 @@ const ParcheggiPage = () => {
     },
   ];
 
-  useEffect(() => {
-    fetchParkings(searchTerm)
-      .then(data => {
-        setParkings(data);
-      })
-      .catch(error => {
-        console.error('Errore:', error);
-        setError(error.message);
-      });
-  }, [searchTerm]);
-
   return (
     <>
       <div className="centered">
@@ -100,12 +98,12 @@ const ParcheggiPage = () => {
             show={modalShow}
             onHide={() => setModalShow(false)}
             className="modalStyle"
-            setParkings={setParkings}
             search={searchTerm}
+            setParkings={setParkings}
           />
         </div>
         <div className="table-container">
-          <TableComp items={currentItems} columns={columns} />
+          <TableComp items={parkings} columns={columns} />
           <div className="pagination_container">
             <div></div>
             <ReactPaginate

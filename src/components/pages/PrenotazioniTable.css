@@ -8,3 +8,11 @@
     justify-content: space-between;
     align-items: center;
 }
+
+.buttonGreen2{
+    width: 14rem;
+    height: 2.5rem;
+    font-weight: bold;
+    background-color: #038203 !important; 
+    border: none;
+}

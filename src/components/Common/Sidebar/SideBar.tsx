@@ -19,7 +19,7 @@ const SideBar = () => {
               <div className="Psvg"></div>
           </div>
         </Link>
-        <Link to="/prenotazioni">
+        <Link to="/prenotazioniTable">
           <div className="outer_">
               <div className="NoteSvg"></div>
           </div>

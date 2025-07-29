@@ -16,15 +16,15 @@ function PrenotazioniPage() {
   const [selectedParcheggio, setSelectedParcheggio] = useState<OptionType | null>(null);
   const [inizio, setInizio] = useState("");
   const [fine, setFine] = useState("");
-   useEffect(() => {
+  useEffect(() => {
     fetchAutosWithoutParams("").then((data) => {
-      const options = data.map((auto: { id: string, targa: string}) => ({
+      const options = data.map((auto: { id: string, targa: string }) => ({
         value: auto.id,
         label: auto.targa,
       }));
       setAutoOptions(options);
     });
-     fetchParkingsWithoutPaginationParams("").then((data) => {
+    fetchParkingsWithoutPaginationParams("").then((data) => {
       const options = data.map((p: { id: string, nome: string }) => ({
         value: p.id,
         label: p.nome
@@ -40,24 +40,24 @@ function PrenotazioniPage() {
     if (!selectedAuto || !selectedParcheggio || !inizio || !fine) {
       alert("Compila tutti i campi!");
       return;
-  }
+    }
 
 
 
-  const prenotazione = {
-    idAuto: selectedAuto.value,
-    idParcheggio: selectedParcheggio.value,
-    inizio,
-    fine
+    const prenotazione = {
+      idAuto: selectedAuto.value,
+      idParcheggio: selectedParcheggio.value,
+      inizio,
+      fine
+    };
+
+    try {
+      await addPrenotazione(prenotazione);
+      alert("Prenotazione aggiunta con successo!");
+    } catch (err) {
+      console.error("Errore durante la prenotazione:", err);
+    }
   };
-
-  try {
-    await addPrenotazione(prenotazione);
-    alert("Prenotazione aggiunta con successo!");
-  } catch (err) {
-    console.error("Errore durante la prenotazione:", err);
-  }
-};
 
 
 
@@ -70,10 +70,10 @@ function PrenotazioniPage() {
           <div className="top">
             <div className="auto-select">
               <p>Seleziona la targa</p>
-              <Select className='color-select' options={autoOptions} 
+              <Select className='color-select' options={autoOptions}
                 value={selectedAuto}
                 onChange={(selected) => setSelectedAuto(selected)}
-                placeholder="Seleziona auto"/>
+                placeholder="Seleziona auto" />
             </div>
             <div className="parcheggio-select">
               <p>Seleziona un parcheggio</p>
@@ -92,7 +92,7 @@ function PrenotazioniPage() {
                 type="datetime-local"
                 value={inizio}
                 onChange={(e) => setInizio(e.target.value)}
-              />          
+              />
             </div>
             <div className="date-select">
               <p>Data fine</p>
@@ -108,9 +108,9 @@ function PrenotazioniPage() {
             <form onSubmit={handleSubmit}>
               <button type="submit" className="btn-prenota">Prenota</button>
             </form>
-          <Link to={"/prenotazioniTable"}>
-            <Button className="button-bottom" variant="primary">Torna alle prenotazioni</Button>
-          </Link>
+            <Link to={"/prenotazioniTable"}>
+              <Button className="button-bottom" variant="primary">Torna alle prenotazioni</Button>
+            </Link>
           </div>
         </div>
       </div>

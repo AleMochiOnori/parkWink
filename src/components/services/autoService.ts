@@ -4,7 +4,7 @@ const BASE_URL = 'http://localhost:3001';
 
 export function fetchAutos(searchTerm : string , currentPage : number , postPerPage : number) {
     const page = currentPage + 1;
-    return fetch(`${BASE_URL}/auto${`?_page=${page}&_limit=${postPerPage}${searchTerm ? `&id=${searchTerm}` : ""}`}`)
+    return fetch(`${BASE_URL}/auto${`?_page=${page}&_limit=${postPerPage}${searchTerm ? `&targa_like=${searchTerm}` : ""}`}`)
     
         .then(async response => {
             if (!response.ok) {

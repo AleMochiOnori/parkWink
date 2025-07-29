@@ -1,6 +1,6 @@
-.pagination{
+.pagination {
     margin-top: 20px;
-    flex : end
+    flex: end
 }
 
 .pagination_container {
@@ -9,22 +9,23 @@
     align-items: center;
 }
 
-.buttonGreen2{
+.buttonGreen2 {
     width: 14rem;
     height: 2.5rem;
     font-weight: bold;
-    background-color: #038203 !important; 
+    background-color: #038203 !important;
     border: none;
 }
 
 
-@media (max-width: 630px){
+@media (max-width: 630px) {
+
     .my-table th,
     .my-table td {
         text-align: center;
-}
+    }
 
-    .buttonGreen2{
+    .buttonGreen2 {
         width: 6rem;
         font-size: 10px;
     }
@@ -33,5 +34,5 @@
         margin-left: 70px;
     }
 
-   
+
 }

@@ -16,20 +16,20 @@ function App() {
 
   return (
     <>
-    <Router>
-      <Routes>
-        <Route path="/" element={<DashBoard />}>
-          <Route index element={<AutoPage />} />
-          <Route path="auto" element={<AutoPage />} />
-          <Route path="parcheggi" element={<ParcheggiPage />} />
-          <Route path="PrenotazioniTable" element={<PrenotazioniTable />} />
-          <Route path="AutoDetail/:id" element={<AutoDetail />} />
-          <Route path="ParcheggiDetail/:id" element={<ParcheggioDetail />} />
-          <Route path="prenotazioni" element={<PrenotazioniPage />} />
-          <Route path="PrenotazioneDetail/:id" element={<PrenotazioneDetail />} />
-        </Route>
-      </Routes>
-    </Router>
+      <Router>
+        <Routes>
+          <Route path="/" element={<DashBoard />}>
+            <Route index element={<AutoPage />} />
+            <Route path="auto" element={<AutoPage />} />
+            <Route path="parcheggi" element={<ParcheggiPage />} />
+            <Route path="PrenotazioniTable" element={<PrenotazioniTable />} />
+            <Route path="AutoDetail/:id" element={<AutoDetail />} />
+            <Route path="ParcheggiDetail/:id" element={<ParcheggioDetail />} />
+            <Route path="prenotazioni" element={<PrenotazioniPage />} />
+            <Route path="PrenotazioneDetail/:id" element={<PrenotazioneDetail />} />
+          </Route>
+        </Routes>
+      </Router>
     </>
   )
 }

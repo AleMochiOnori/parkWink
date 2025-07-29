@@ -1,6 +1,6 @@
 const BASE_URL = 'http://localhost:3001';
 
-export function fetchParkingsWithoutPaginationParams(searchTerm : string) {
+export function fetchParkingsWithoutPaginationParams(searchTerm: string) {
     return fetch(`${BASE_URL}/parcheggi${searchTerm ? `?id=${searchTerm}` : ''}`)
         .then(response => {
             if (!response.ok) {
@@ -11,10 +11,10 @@ export function fetchParkingsWithoutPaginationParams(searchTerm : string) {
 }
 
 
-export function fetchParkings(searchTerm : string , currentPage : number , postPerPage : number) {
+export function fetchParkings(searchTerm: string, currentPage: number, postPerPage: number) {
     const page = currentPage + 1;
     return fetch(`${BASE_URL}/parcheggi${`?_page=${page}&_limit=${postPerPage}${searchTerm ? `&id=${searchTerm}` : ""}`}`)
-    
+
         .then(async response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -23,7 +23,7 @@ export function fetchParkings(searchTerm : string , currentPage : number , postP
             const total = Number(response.headers.get('x-total-count'));
             return { data, total };
         })
-        
+
 }
 
 
@@ -35,17 +35,17 @@ export function addParking(parking: { nome: string; posizione: string; postiTota
         },
         body: JSON.stringify(parking),
     })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json();
-    });
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        });
 }
 
 
 
-export function fetchParksWithoutParams(searchTerm : string) {
+export function fetchParksWithoutParams(searchTerm: string) {
     return fetch(`${BASE_URL}/parcheggi${searchTerm ? `?id=${searchTerm}` : ''}`)
         .then(async response => {
             if (!response.ok) {
@@ -60,10 +60,10 @@ export function deleteParking(id: string) {
     return fetch(`${BASE_URL}/parcheggi/${id}`, {
         method: 'DELETE',
     })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json();
-    });
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        });
 }

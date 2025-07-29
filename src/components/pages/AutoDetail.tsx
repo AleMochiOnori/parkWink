@@ -50,7 +50,7 @@ function AutoDetail() {
         setValue("modello", data.modello);
         setValue("colore", data.colore);
         setValue("proprietario", data.proprietario);
-        setValue("colore" , data.colore.toLowerCase());
+        setValue("colore", data.colore.toLowerCase());
       })
       .catch(() => setError("Errore nel caricamento dell'auto"));
   }, [id, setValue]);
@@ -64,7 +64,7 @@ function AutoDetail() {
         },
         body: JSON.stringify(data),
       }).then((res) => {
-        if (!res.ok) throw new Error("Errore nella modifica");  
+        if (!res.ok) throw new Error("Errore nella modifica");
         setSuccess(true);
       })
         .catch(() => setError("Errore durante il salvataggio"));
@@ -94,21 +94,21 @@ function AutoDetail() {
           <label>
             <p className="TextForm">Colore</p>
             <Controller
-            name="colore"
-            control={control}
-            rules={{ required: true }}
-            render={({ field }) => (
-             <Select
-              {...field}
-              className="color-select"
-              options={options}
-              value={options.find(option => option.value === field.value)}
-              onChange={(selectedOption) => field.onChange(selectedOption?.value)}
-      />
-    )}
-  />
-  {errors.colore && <span>Campo obbligatorio</span>}
-</label>
+              name="colore"
+              control={control}
+              rules={{ required: true }}
+              render={({ field }) => (
+                <Select
+                  {...field}
+                  className="color-select"
+                  options={options}
+                  value={options.find(option => option.value === field.value)}
+                  onChange={(selectedOption) => field.onChange(selectedOption?.value)}
+                />
+              )}
+            />
+            {errors.colore && <span>Campo obbligatorio</span>}
+          </label>
 
           <label>
             <p className="TextForm">Proprietario</p>

@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import "./sideBar.css";
 
+
+
 const SideBar = () => {
+  
   return (
     <div className="sideBar-container">
       <div className="top-content">

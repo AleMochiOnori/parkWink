@@ -1,14 +1,21 @@
+
 #root {
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
   height: 100%;
+  overflow-x: hidden !important;
+  width: 100vw;
+  box-sizing: border-box;
 }
+
 
 body{
   background-color: white;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
   height: 100%;
+  width: 100vw;
+  box-sizing: border-box;
 }
 
 .logo {
@@ -45,4 +52,30 @@ body{
 
 .read-the-docs {
   color: #888;
+}
+
+
+
+@media (max-width: 630px ){
+  body, #root {
+    overflow-x: hidden !important;
+    width: 100vw;
+    box-sizing: border-box;
+  }
+  body{
+    height: 130rem;
+  }
+}
+
+
+
+@media (max-width: 400px ){
+  body, #root {
+    overflow-x: hidden !important;
+    width: 100vw;
+    box-sizing: border-box;
+  }
+  body{
+    height: 130rem;
+  }
 }

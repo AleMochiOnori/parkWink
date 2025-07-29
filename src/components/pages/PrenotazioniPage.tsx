@@ -65,7 +65,7 @@ function PrenotazioniPage() {
   return (
     <div className="centered">
       <div className="prenotazioni-container">
-        <h1 className="ciao">Prenota un parcheggio</h1>
+        <h1 className="margin-text">Prenota un parcheggio</h1>
         <div className="select-container">
           <div className="top">
             <div className="auto-select">
@@ -111,10 +111,7 @@ function PrenotazioniPage() {
           <Link to={"/prenotazioniTable"}>
             <Button className="button-bottom" variant="primary">Torna alle prenotazioni</Button>
           </Link>
-           
           </div>
-
-
         </div>
       </div>
     </div>

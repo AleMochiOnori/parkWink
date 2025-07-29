@@ -403,6 +403,13 @@
       "idParcheggio": 1,
       "inizio": "2025-08-05T10:00",
       "fine": "2025-08-05T12:00"
+    },
+    {
+      "idAuto": "15",
+      "idParcheggio": 11,
+      "inizio": "2025-07-12T10:08",
+      "fine": "2025-07-29T14:19",
+      "id": "stObQ5B"
     }
   ]
 }

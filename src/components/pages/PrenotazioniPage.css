@@ -14,15 +14,27 @@
   display: flex;
   gap: 3rem;
   justify-content: center;
+  align-items: center;
   margin-bottom: 20px;
 }
 
-
+.margin-text{
+  margin-top: 5rem;
+}
 .date-select {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+  justify-content: center;
+  text-align: center;
+}
+
+.auto-select, .parcheggio-select {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .input-Style {
@@ -59,6 +71,7 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
 
 .centered {
   padding-top: 100px;
+
 }
 
 

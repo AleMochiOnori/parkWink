@@ -23,4 +23,34 @@
     justify-content: center;
    
   }
+
+
+  .barraRicerca {
+    width: 14rem;
+   
+  
+}
+
+
+  
+
+}
+
+
+@media (max-width : 500px ){
+  .barraRicerca {
+    width: 10rem;
+    height: 2.5rem;
+  }
+
+}
+
+
+
+@media (max-width : 375px ){
+  .barraRicerca {
+    width: 8rem;
+    margin-left: 20px;
+  }
+
 }

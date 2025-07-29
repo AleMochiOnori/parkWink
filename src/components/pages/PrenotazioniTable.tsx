@@ -22,7 +22,7 @@ interface Prenotazione {
 const PrenotazioniPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(0);
-  const itemsPerPage : number = 10
+  const itemsPerPage : number = 9
   const [prenotazioni, setPrenotazioni] = useState<Prenotazione[]>([]);
   const [total, setTotal] = useState(0);
 

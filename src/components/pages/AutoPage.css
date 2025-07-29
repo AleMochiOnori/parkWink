@@ -5,6 +5,7 @@
 
 .ciao {
     color: black;
+    margin-top: -20px;
 }
 
 .action-icons {
@@ -20,20 +21,50 @@
     width: 20px;
 }
 
-.buttonGreen{
+.MybuttonGreen{
   width: 12rem;
   background-color: #038203 !important; 
   border-color: #038203  !important;
   font-weight: bold !important;
   height: 2.5rem;
+  font-size: 30px;
 }
 
 
 .SearchBar{
     margin-bottom: 3rem;
-    margin-top: 3rem;
+    margin-top: 1.2rem;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
+}
+
+
+
+@media (max-width : 600px) {
+    .buttonGreen2{
+        width: 6rem;
+        font-size: 15px;
+        height: 4.5rem;
+
+    }
+
+    .SearchBar{
+        margin-left: 70px;
+    }
+
+    .ciao{
+        margin-left: 70px;
+    }
+
+}
+
+
+@media (max-width : 600px) {
+    .buttonGreen2{
+        width: 6rem;
+        font-size: 10px;
+    }
+
 }

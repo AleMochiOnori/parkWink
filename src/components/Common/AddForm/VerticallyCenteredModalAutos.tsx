@@ -1,7 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import "./VerticallyCenteredModalAutos.css"
-import { addAuto, fetchAutos, validatePlate } from '../../services/autoService';
+import { addAuto, validatePlate } from '../../services/autoService';
 import React, { useState, type FormEvent } from 'react';
 import Select from 'react-select'
 import { fetchAutosWithoutParams } from '../../services/prenotazioneService';

@@ -2,8 +2,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import "./ModalPark.css"
 import React, { useState, type FormEvent } from 'react';
-import { addParking, fetchParkings } from '../../services/parcheggioService';
-import { validatePlate } from '../../services/autoService';
+import { addParking, fetchParkingsWithoutPaginationParams } from '../../services/parcheggioService';
 
 
 const ModalPark = (props : any) => {
@@ -26,7 +25,7 @@ const ModalPark = (props : any) => {
     
     addParking(formData)
       .then(() => {
-        fetchParkings(props.search).then((data) => {
+        fetchParkingsWithoutPaginationParams(props.search).then((data) => {
           props.setParkings(data);
         }).catch((error) => {
           console.error('Errore durante il caricamento delle auto:', error); 

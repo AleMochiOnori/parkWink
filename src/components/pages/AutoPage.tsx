@@ -22,7 +22,7 @@ interface Auto {
 const AutoPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [autos, setAutos] = useState<Auto[]>([]);
-  const [error, setError] = useState<string | null>(null);
+  const [, setError] = useState<string | null>(null);
   const [modalShow, setModalShow] = useState(false);
   const [currentPage, setCurrentPage] = useState(0);
   const [total, setTotal] = useState(0);

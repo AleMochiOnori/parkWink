@@ -20,7 +20,7 @@ interface Parcheggio {
 const ParcheggiPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [parkings, setParkings] = useState<Parcheggio[]>([]);
-  const [error, setError] = useState<string | null>(null);
+  const [, setError] = useState<string | null>(null);
   const [modalShow, setModalShow] = useState(false);
   const [currentPage, setCurrentPage] = useState(0);
   const [total, setTotal] = useState(0);
@@ -33,6 +33,7 @@ const ParcheggiPage = () => {
       .then(res => {
         setParkings(res.data);
         setTotal(res.total);
+        
       })
       .catch(error => {
         console.error('Errore durante il fetch dei parcheggi:', error);

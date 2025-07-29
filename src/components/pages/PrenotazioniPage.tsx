@@ -1,6 +1,6 @@
 import "./PrenotazioniPage.css";
 import Select from 'react-select'
-import { fetchParkings, fetchParkingsWithoutPaginationParams } from "../services/parcheggioService";
+import {  fetchParkingsWithoutPaginationParams } from "../services/parcheggioService";
 import { useEffect, useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { addPrenotazione } from "../services/prenotazioneService";

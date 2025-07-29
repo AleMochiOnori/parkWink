@@ -50,6 +50,7 @@ function AutoDetail() {
         setValue("modello", data.modello);
         setValue("colore", data.colore);
         setValue("proprietario", data.proprietario);
+        setValue("colore" , data.colore.toLocaleLowerCase());
       })
       .catch(() => setError("Errore nel caricamento dell'auto"));
   }, [id, setValue]);
@@ -98,6 +99,7 @@ function AutoDetail() {
             rules={{ required: true }}
             render={({ field }) => (
              <Select
+              placeholder={field.value ? options.find(option => option.value === field.value)?.label : "Seleziona colore"}
               {...field}
               className="color-select"
               options={options}

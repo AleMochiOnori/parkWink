@@ -1,7 +1,7 @@
 const BASE_URL = 'http://localhost:3001';
 
 export function fetchParkingsWithoutPaginationParams(searchTerm: string) {
-    return fetch(`${BASE_URL}/parcheggi${searchTerm ? `?id=${searchTerm}` : ''}`)
+    return fetch(`${BASE_URL}/parcheggi${searchTerm ? `&nome_like=${searchTerm}` : ''}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -13,7 +13,7 @@ export function fetchParkingsWithoutPaginationParams(searchTerm: string) {
 
 export function fetchParkings(searchTerm: string, currentPage: number, postPerPage: number) {
     const page = currentPage + 1;
-    return fetch(`${BASE_URL}/parcheggi${`?_page=${page}&_limit=${postPerPage}${searchTerm ? `&id=${searchTerm}` : ""}`}`)
+    return fetch(`${BASE_URL}/parcheggi${`?_page=${page}&_limit=${postPerPage}${searchTerm ? `&nome_like=${searchTerm}` : ""}`}`)
 
         .then(async response => {
             if (!response.ok) {

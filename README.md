@@ -18,8 +18,13 @@ GENERAL
 BACK END 
 
 - Aprire il terminale dentro la cartella winkpark e lanciare il comando 
-  
+
+
+  ```bash
   npm install -g json-server
+
+  ```
+
 
 - Successivamente esegui il comando qua sotto per inizializzare il backend
 
@@ -35,9 +40,11 @@ FRONT END
 
 - Aprire il terminale dentro la cartella winkpark e lanciare il comando 
 
+  ```bash
   npm install
+  ```
 
 - Una volta installate le dependencies (npm install)  eseguire il comando :
-
+  ```bash
   npm run dev 
-
+  ```

@@ -22,18 +22,18 @@ interface Prenotazione {
 const PrenotazioniPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(0);
-  const itemsPerPage : number = 9
+  const itemsPerPage: number = 9
   const [prenotazioni, setPrenotazioni] = useState<Prenotazione[]>([]);
   const [total, setTotal] = useState(0);
 
-useEffect(() => {
-  fetchPrenotazioni(searchTerm, currentPage, itemsPerPage).then(res => {
-    setPrenotazioni(res.data);
-    setTotal(res.total);
-  });
-}, [currentPage, searchTerm]);
+  useEffect(() => {
+    fetchPrenotazioni(searchTerm, currentPage, itemsPerPage).then(res => {
+      setPrenotazioni(res.data);
+      setTotal(res.total);
+    });
+  }, [currentPage, searchTerm]);
 
-const pageCount = Math.ceil(total / itemsPerPage);
+  const pageCount = Math.ceil(total / itemsPerPage);
 
   const handlePageClick = (event: { selected: number }) => {
     setCurrentPage(event.selected);
@@ -88,11 +88,11 @@ const pageCount = Math.ceil(total / itemsPerPage);
         <div className="SearchBar">
           <SearchBar value={searchTerm} setSearchTerm={setSearchTerm} />
           <Link to={"/prenotazioni"}>
-             <Button className="buttonGreen2" variant="primary">
-            Aggiungi Prenotazione
-          </Button>
+            <Button className="buttonGreen2" variant="primary">
+              Aggiungi Prenotazione
+            </Button>
           </Link>
-         
+
         </div>
         <div className="table-container">
           <TableComp items={prenotazioni} columns={columns} />

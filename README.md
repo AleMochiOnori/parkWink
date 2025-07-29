@@ -1,4 +1,4 @@
-# React + TypeScript + Vite
+# parkWink
 
 ParkWink è un applicazione per gestire prenotazioni , posti auto e parcheggi .
 

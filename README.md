@@ -11,8 +11,6 @@ GENERAL
   scegliere la versione per il proprio OS  https://nodejs.org/en/download
 
 
- 
-
 
 
 BACK END 
@@ -28,9 +26,10 @@ BACK END
 
 - Successivamente esegui il comando qua sotto per inizializzare il backend
 
-
+  ```bash
   json-server --watch db.json --port 3001
 
+  ```
 
 
 

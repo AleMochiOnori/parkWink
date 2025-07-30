@@ -8,7 +8,7 @@ import { Outlet } from "react-router-dom";
 const DashBoard = () => {
   return (
     <div className="dashboard-container">
-      <SideBar />
+      <SideBar /> 
       <div className="main-content-wrapper">
         <Header />
         <main className="main-content">

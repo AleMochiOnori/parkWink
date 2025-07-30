@@ -7,11 +7,8 @@ const SideBar = () => {
   return (
     <div className="sideBar-container">
       <div className="top-content">
-        <div className="outer_top">
           <div className="collapseSvg"></div>
-        </div>
       </div>
-      
       <div className="middle-content">
         <Link to="/auto">
           <div className="outer_">

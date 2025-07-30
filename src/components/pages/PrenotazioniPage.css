@@ -112,3 +112,207 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
 .button-bottom:hover {
   background-color: #3498db;
 }
+
+
+
+@media (max-width: 1020px) {
+  .prenotazioni-container {
+    height: 110vh;
+    margin-left: 7rem;
+  }
+
+  .top{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .date-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  body {
+  height: min-content;
+}
+}
+
+
+
+@media (max-width: 600px) {
+  .prenotazioni-container {
+    margin-left: 5.6rem;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .top{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .date-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  .input-Style {
+  width: 16rem;
+
+}
+  .color-select {
+    width: 16rem;
+  }
+
+  .button-bottom {
+    width: 12rem;
+    font-size: 15px;
+    height: 3.7rem;
+}
+  .btn-prenota {
+    width: 8rem;
+    height: 3.7rem;
+  }
+
+  body {
+    height: min-content;
+  }
+}
+
+@media (max-width: 680px) {
+  .prenotazioni-container {
+    margin-left: 6.7rem;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
+    height: 100vh;
+  }
+
+  .top{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .date-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  .input-Style {
+  width: 16rem;
+
+}
+  .color-select {
+    width: 16rem;
+  }
+
+  .button-bottom {
+    width: 12rem;
+    font-size: 15px;
+    height: 3.7rem;
+}
+  .btn-prenota {
+    width: 8rem;
+    height: 3.7rem;
+  }
+
+  body {
+    height: min-content;
+  }
+}
+
+
+
+@media (max-width: 560px) {
+  .prenotazioni-container {
+    margin-left: 5.6rem;
+    height: 110vh;
+  }
+
+  .top{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .date-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  .input-Style {
+  width: 13rem;
+
+}
+  .color-select {
+    width: 13rem;
+  }
+
+  .button-bottom {
+    width: 7rem;
+    font-size: 13px;
+    height: 3.7rem;
+}
+  .btn-prenota {
+    width: 6rem;
+    height: 3.7rem;
+  }
+
+  body {
+    height: min-content;
+  }
+}
+
+
+
+@media (max-width: 450px) {
+  .prenotazioni-container {
+    margin-left: 4rem;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
+    height: 110vh;
+  }
+
+  .top{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .date-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  .input-Style {
+  width: 13rem;
+
+}
+  .color-select {
+    width: 13rem;
+  }
+
+  .button-bottom {
+    width: 7rem;
+    font-size: 13px;
+    height: 3.7rem;
+}
+  .btn-prenota {
+    width: 6rem;
+    height: 3.7rem;
+  }
+
+  body {
+    height: min-content;
+  }
+
+  .margin-text {
+    font-size: 20px;
+  }
+
+
+  .buttons-container{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+  }
+}

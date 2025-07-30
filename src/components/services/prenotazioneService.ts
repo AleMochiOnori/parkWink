@@ -21,7 +21,7 @@ export async function addPrenotazione(data: any) {
 
 export function fetchPrenotazioni(searchTerm: string, currentPage: number, postPerPage: number) {
   const page = currentPage + 1;
-  return fetch(`${BASE_URL}/prenotazioni${`?_page=${page}&_limit=${postPerPage}${searchTerm ? `&id=${searchTerm}` : ""}`}`)
+  return fetch(`${BASE_URL}/prenotazioni${`?_page=${page}&_limit=${postPerPage}${searchTerm ? `&targa=${searchTerm}` : ""}`}`)
 
     .then(async response => {
       if (!response.ok) {
@@ -34,6 +34,31 @@ export function fetchPrenotazioni(searchTerm: string, currentPage: number, postP
 
 }
 
+
+export function ricercaPrenotazioni(targa: string, searchTerm: string) {
+  return fetch(`${BASE_URL}/auto$&targa_like=${searchTerm}`)
+    .then(async response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.json();
+
+      if (data.lenght != 0) {
+        fetch(`${BASE_URL}/prenotazioni$&idAuto_like=${searchTerm}`).then(async response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          const data = await response.json();
+          const total = Number(response.headers.get('x-total-count'));
+          return { data, total };
+        })
+
+      }
+
+
+    })
+
+}
 
 
 export function fetchAutosWithoutParams(searchTerm: string) {

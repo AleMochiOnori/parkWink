@@ -69,3 +69,26 @@
     width: 40px;
     height: 40px;
 }
+
+.collapseSvg{
+    background-image: url("/src/assets/Collapse.svg");
+    background-size: cover;
+    width: 35px;
+    height: 35px;
+}
+
+
+.outer_top{
+    background-color: #3d4146;
+    width: 60px;
+    height: 60px;
+    display: grid;
+    place-items: center;
+    margin-top: 10px;
+}
+
+.outer_top:hover{
+    background-color: #4e4f50;
+    cursor: pointer;
+    border-radius: 10px;
+}

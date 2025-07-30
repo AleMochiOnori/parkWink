@@ -4,11 +4,12 @@ import "./sideBar.css";
 
 
 const SideBar = () => {
-  
   return (
     <div className="sideBar-container">
       <div className="top-content">
-        <p></p>
+        <div className="outer_top">
+          <div className="collapseSvg"></div>
+        </div>
       </div>
       
       <div className="middle-content">

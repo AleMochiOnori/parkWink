@@ -118,3 +118,9 @@ td {
     margin-left: -200px;
   }
 }
+
+@media (max-width : 547px) {
+    .my-table {
+    border: none;
+  }
+}

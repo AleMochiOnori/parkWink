@@ -1,13 +1,6 @@
 {
   "auto": [
     {
-      "id": "1",
-      "targa": "AA555PR",
-      "modello": "Fiat Panda",
-      "colore": "Blu",
-      "proprietario": "Mario Rossi"
-    },
-    {
       "id": "2",
       "targa": "BB123XY",
       "modello": "Volkswagen Golf",

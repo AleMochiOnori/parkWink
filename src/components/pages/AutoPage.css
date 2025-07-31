@@ -65,3 +65,18 @@
 
 }
 
+@media (max-width : 547px) {
+    .buttonGreen2{
+        width: 3rem;
+        font-size: 15px;
+        height: 4.5rem;
+        
+    }
+
+
+
+    .ciao{
+        margin-left: 70px;
+    }
+
+}

@@ -60,7 +60,7 @@ td {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 540px) {
   .table-container {
     width: 100vw;
     margin-left: 0;
@@ -115,6 +115,6 @@ td {
   .my-table th,
   .my-table td {
     text-align: center;
-    margin-left: -100px;
+    margin-left: -200px;
   }
 }

@@ -14,6 +14,14 @@
 }
 
 
+@media (max-width : 950px ){
+  .barraRicerca {
+    width: 15rem;
+    margin-left: 5rem;
+  }
+
+}
+
 @media (max-width: 768px) {
   .search-container {
     width: 100%;
@@ -27,7 +35,7 @@
 
   .barraRicerca {
     width: 14rem;
-   
+    margin-left: 5rem;
   
 }
 
@@ -37,10 +45,29 @@
 }
 
 
-@media (max-width : 500px ){
+@media (max-width : 580px ){
   .barraRicerca {
     width: 10rem;
     height: 2.5rem;
+    
+  }
+
+   .ciao{
+    margin-left: 5rem;
+  }
+
+
+}
+
+
+@media (max-width : 480px ){
+  .barraRicerca {
+    width: 8rem;
+    margin-left: -20px;
+  }
+
+  .ciao{
+    margin-left: -15px;
   }
 
 }

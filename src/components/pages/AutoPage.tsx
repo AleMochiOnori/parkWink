@@ -26,7 +26,7 @@ const AutoPage = () => {
   const [modalShow, setModalShow] = useState(false);
   const [currentPage, setCurrentPage] = useState(0);
   const [total, setTotal] = useState(0);
-  const itemsPerPage = 9;
+  const itemsPerPage = 10;
 
   const pageCount = Math.ceil(total / itemsPerPage);
 

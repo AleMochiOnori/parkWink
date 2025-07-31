@@ -25,13 +25,23 @@
         text-align: center;
     }
 
-    .buttonGreen2 {
-        width: 6rem;
-        font-size: 10px;
-    }
 
     .pagination_container {
         margin-left: 70px;
+    }
+
+
+}
+
+
+
+
+@media (max-width: 500px) {
+
+
+    .buttonGreen2 {
+        width: 8rem;
+        font-size: 15px;
     }
 
 

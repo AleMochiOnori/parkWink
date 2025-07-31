@@ -1,13 +1,23 @@
 import { Link } from "react-router-dom";
 import "./sideBar.css";
+import { useEffect, useRef, useState } from "react";
 
 
 
 const SideBar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+
+   function toggleSidebar() {
+    setIsOpen(prev => !prev);
+  }
+
+   
+
   return (
-    <div className="sideBar-container">
+    <div className={`sideBar-container ${isOpen ? "open" : "collapsed"}`}>
       <div className="top-content">
-          <div className="collapseSvg"></div>
+          <div onClick={toggleSidebar} className={`${isOpen ? "whiteCollapseSvg" : "blackSvg"}`}></div>
       </div>
       <div className="middle-content">
         <Link to="/auto">

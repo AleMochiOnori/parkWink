@@ -22,10 +22,12 @@ interface Prenotazione {
 const PrenotazioniPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(0);
-  const itemsPerPage: number = 9
+  const itemsPerPage: number = 10;
   const [prenotazioni, setPrenotazioni] = useState<Prenotazione[]>([]);
   const [total, setTotal] = useState(0);
 
+
+ 
   useEffect(() => {
     fetchPrenotazioni(searchTerm, currentPage, itemsPerPage).then(res => {
       setPrenotazioni(res.data);
@@ -89,7 +91,7 @@ const PrenotazioniPage = () => {
           <SearchBar value={searchTerm} setSearchTerm={setSearchTerm} />
           <Link to={"/prenotazioni"}>
             <Button className="buttonGreen2" variant="primary">
-              Aggiungi Prenotazione
+              Aggiungi 
             </Button>
           </Link>
 

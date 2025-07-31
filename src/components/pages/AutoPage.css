@@ -39,16 +39,24 @@
     justify-content: center;
     gap: 20px;
 }
+@media (max-width : 630px) {
+     .pagination{
+        margin-left: -100px;
+    }
+
+  
+}
 
 
 
 @media (max-width : 600px) {
     .buttonGreen2{
-        width: 6rem;
+        width: 3rem;
         font-size: 15px;
         height: 4.5rem;
         
     }
+
 
 
     .ciao{
@@ -57,13 +65,3 @@
 
 }
 
-
-@media (max-width : 400px) {
-    .buttonGreen2{
-        width: 2rem;
-        font-size: 1px;
-    }
-    .pagination{
-        margin-left: -100px;
-    }
-}

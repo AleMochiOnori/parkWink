@@ -75,30 +75,45 @@
 
 
 @media (max-width : 480px) {
-  .whiteCollapseSvg {
-    background-image: url("/src/assets/whiteCollapse.svg");
-    background-size: cover;
-    width: 30px;
-    height: 30px;
-    margin-top: 13px;
-    cursor: pointer;
-    position: fixed;
-    top: 1px;
-    left: 25px;
-    z-index: 2;
-}
+    .whiteCollapseSvg {
+        background-image: url("/src/assets/whiteCollapse.svg");
+        background-size: cover;
+        width: 30px;
+        height: 30px;
+        margin-top: 13px;
+        cursor: pointer;
+        position: fixed;
+        top: 1px;
+        left: 25px;
+        z-index: 2;
+        transition: transform 0.3s ease;
+        display: block;
+        /* visibile solo in mobile */
+        transform: rotate(90deg);
+        /* stato iniziale → freccia a destra */
+    }
 
-.blackSvg {
-    background-image: url("/src/assets/blackCollapsed.svg");
-    background-size: cover;
-    width: 30px;
-    height: 30px;
-    margin-top: 13px;
-    cursor: pointer;
-    position: fixed;
-    top: 1px;
-    left: 25px;
-    z-index: 2;
+    .rotatedWhite {
+        transform: rotate(-90deg);
+        /* sidebar aperta → freccia a sinistra */
+    }
+
+    .rotatedBlack {
+        transform: rotate(90deg);
+    }
+
+    .blackSvg {
+        background-image: url("/src/assets/blackCollapsed.svg");
+        background-size: cover;
+        width: 30px;
+        height: 30px;
+        margin-top: 13px;
+        cursor: pointer;
+        position: fixed;
+        top: 1px;
+        left: 25px;
+        z-index: 2;
+        transition: transform 0.3s ease;
     }
 
     .sideBar-container.collapsed {
@@ -111,5 +126,5 @@
     }
 
 
- 
+
 }

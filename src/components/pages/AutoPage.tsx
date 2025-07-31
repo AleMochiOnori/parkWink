@@ -96,7 +96,7 @@ const AutoPage = () => {
         <div className="SearchBar">
           <SearchBar value={searchTerm} setSearchTerm={setSearchTerm} />
           <Button className="buttonGreen2" variant="primary" onClick={() => setModalShow(true)}>
-            Aggiungi Auto
+            Aggiungi
           </Button>
           <MyVerticallyCenteredModal
             show={modalShow}

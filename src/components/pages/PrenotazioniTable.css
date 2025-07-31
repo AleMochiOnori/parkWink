@@ -40,9 +40,14 @@
 
 
     .buttonGreen2 {
-        width: 8rem;
-        font-size: 15px;
+        width: 8em;
+        background-color: #038203 !important;
+        border: none;
+        font-weight: bold;
+        height: 2.7rem;
     }
+
+    
 
 
 }

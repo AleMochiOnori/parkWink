@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "./sideBar.css";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 
 
 
@@ -17,7 +17,7 @@ const SideBar = () => {
   return (
     <div className={`sideBar-container ${isOpen ? "open" : "collapsed"}`}>
       <div className="top-content">
-          <div onClick={toggleSidebar} className={`${isOpen ? "whiteCollapseSvg" : "blackSvg"}`}></div>
+          <div onClick={toggleSidebar} className={`${isOpen ? "whiteCollapseSvg rotatedWhite" : "blackSvg rotatedBlack"}`}></div>
       </div>
       <div className="middle-content">
         <Link to="/auto">

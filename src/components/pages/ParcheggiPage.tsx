@@ -24,7 +24,7 @@ const ParcheggiPage = () => {
   const [modalShow, setModalShow] = useState(false);
   const [currentPage, setCurrentPage] = useState(0);
   const [total, setTotal] = useState(0);
-  const itemsPerPage = 9;
+  const itemsPerPage = 10;
 
   const pageCount = Math.ceil(total / itemsPerPage);
 
@@ -93,7 +93,7 @@ const ParcheggiPage = () => {
         <div className="SearchBar">
           <SearchBar value={searchTerm} setSearchTerm={setSearchTerm} />
           <Button className="buttonGreen2" variant="primary" onClick={() => setModalShow(true)}>
-            Aggiungi Parcheggio
+            Aggiungi 
           </Button>
           <MyVerticallyCenteredModal
             show={modalShow}
